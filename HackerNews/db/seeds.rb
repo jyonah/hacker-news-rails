@@ -16,7 +16,7 @@ INFO = {
 
 
 INFO.each do |username, email|
-  User.create(username: username, email: email, password_digest: '1234')
+  User.create(username: username, email: email, password: '1234')
 end
 
 User.all.each do |user|
@@ -27,6 +27,6 @@ end
 
 Post.all.each do |post|
   rand(3..5).times do
-    Comment.create(post_id: post.id, body: Faker::Lorem.paragraphs(rand(1..4)), commenter_id: User.all.sample.id )
+    Comment.create(post_id: post.id, body: Faker::Lorem.paragraphs(rand(1..4)), commenter_id: User.all.sample.id)
   end
 end
